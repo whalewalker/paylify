@@ -1,5 +1,6 @@
 package com.paylify.model.data;
 
+import com.paylify.model.repository.contract.BaseModel;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "transactions")
-public class Transaction {
+public class Transaction implements BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transaction_generator")
     @SequenceGenerator(name = "transaction_generator", sequenceName = "transaction_seq")

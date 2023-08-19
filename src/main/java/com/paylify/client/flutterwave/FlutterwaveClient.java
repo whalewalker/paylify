@@ -4,15 +4,16 @@ import com.paylify.client.flutterwave.request.TransferRequest;
 import com.paylify.client.flutterwave.response.TransferResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 import org.springframework.web.service.annotation.PostExchange;
 
-@HttpExchange(url = "/v3", accept = MediaType.APPLICATION_JSON_VALUE, contentType = MediaType.APPLICATION_JSON_VALUE)
+@HttpExchange(url = "/v3/transfers", accept = MediaType.APPLICATION_JSON_VALUE, contentType = MediaType.APPLICATION_JSON_VALUE)
 public interface FlutterwaveClient {
 
-    @PostExchange("/transfers")
+    @PostExchange
     TransferResponse transfer(TransferRequest request);
 
-    @PostExchange("/{retryId}/retries")
-    TransferResponse retry(@PathVariable String retryId);
+    @GetExchange("/{id}")
+    TransferResponse verifyTransfer(@PathVariable int id);
 }

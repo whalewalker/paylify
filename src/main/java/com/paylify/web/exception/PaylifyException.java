@@ -4,7 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PaylifyException extends RuntimeException{
-    final String code;
+    String code;
+    String message;
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     public PaylifyException(Object err){
@@ -22,4 +23,7 @@ public class PaylifyException extends RuntimeException{
         this.code = code;
     }
 
+    public PaylifyException(String message) {
+        super(message);
+    }
 }
