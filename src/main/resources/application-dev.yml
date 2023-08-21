@@ -25,6 +25,6 @@ monify:
   base-url: https://sandbox.monnify.com
   secret-key: W2T84GLUW7PSY4U7YXEMNSXEKMK3317N
 
-seerbit:
-  base-url: https://seerbitapi.com
-  secret-key: SBTESTSECK_PdCcBsPh94bxFtsDDQsMFj2FImzJa9bm65awYC7C
+jwt:
+  secret: ndvkbkvnbi34oy895gng98weygrhjgjr43
+  expiration: 1234
